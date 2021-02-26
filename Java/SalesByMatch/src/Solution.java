@@ -18,7 +18,7 @@ public class Solution {
                 if (pairs[index] == ithElement) {
                     break;
                 }
-                
+
                 index++;
             }
 
