@@ -16,7 +16,6 @@ public class Solution {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
 
-
                 sums[i][j] += arr[i][j];
                 sums[i][j] += arr[i][j + 1];
                 sums[i][j] += arr[i][j + 2];
