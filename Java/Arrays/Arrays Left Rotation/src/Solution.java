@@ -11,13 +11,12 @@ public class Solution {
     // Complete the rotLeft function below.
     static int[] rotLeft(int[] a, int d) {
 
-
+        return a;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+    public static void main(String[] args){
 
         String[] nd = scanner.nextLine().split(" ");
 
@@ -36,18 +35,6 @@ public class Solution {
         }
 
         int[] result = rotLeft(a, d);
-
-        for (int i = 0; i < result.length; i++) {
-            bufferedWriter.write(String.valueOf(result[i]));
-
-            if (i != result.length - 1) {
-                bufferedWriter.write(" ");
-            }
-        }
-
-        bufferedWriter.newLine();
-
-        bufferedWriter.close();
 
         scanner.close();
     }
