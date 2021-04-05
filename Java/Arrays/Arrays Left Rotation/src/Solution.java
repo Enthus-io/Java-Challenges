@@ -10,45 +10,43 @@ public class Solution {
 
     // Complete the rotLeft function below.
     static int[] rotLeft(int[] a, int d) {
-        int[] t = a.clone();
+        int b[] = new int[a.length];
 
-        for (int i = 0; i < a.length; i++) {
-            int ix = i - d;
+        for (int i = 0, j = 0; i < a.length; i++, j++) {
+            if (j + d >= a.length)
+                j = 0 - d;
 
-            if(i - d < 0) {
-                a[a.length + i - d] = t[i];
-            }else{
-                a[a.length - i - 1] = t[a.length - 1];
-            }
+            b[i] = a[j + d];
 
         }
 
-        return a;
+        return b;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] nd = scanner.nextLine().split(" ");
 
-    public static void main(String[] args){
+        int n = Integer.parseInt(nd[0]);
 
-//        String[] nd = scanner.nextLine().split(" ");
+        int d = Integer.parseInt(nd[1]);
 
-//        int n = Integer.parseInt(nd[0]);
+        int[] a = new int[n];
 
-//        int d = Integer.parseInt(nd[1]);
-        int d = 10;
+        String[] aItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-//        int[] a = new int[n];
-        int[] a = {41, 73, 89, 7, 10, 1, 59, 58, 84, 77, 77, 97, 58, 1, 86, 58, 26, 10, 86, 51};
-
-//        String[] aItems = scanner.nextLine().split(" ");
-//        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-//
-//        for (int i = 0; i < n; i++) {
-//            int aItem = Integer.parseInt(aItems[i]);
-//            a[i] = aItem;
-//        }
+        for (int i = 0; i < n; i++) {
+            int aItem = Integer.parseInt(aItems[i]);
+            a[i] = aItem;
+        }
 
         int[] result = rotLeft(a, d);
+
+        for (int i : result) {
+            System.out.print(i + " ");
+
+        }
 
         scanner.close();
     }
