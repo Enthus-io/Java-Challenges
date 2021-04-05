@@ -10,7 +10,7 @@ public class Solution {
 
     // Complete the minimumBribes function below.
     static void minimumBribes(int[] q) {
-        
+
     }
 
     private static final Scanner scanner = new Scanner(System.in);
