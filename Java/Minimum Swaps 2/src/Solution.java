@@ -11,15 +11,17 @@ public class Solution {
     // Complete the minimumSwaps function below.
     static int minimumSwaps(int[] arr) {
         int count = 0;
-        int temp;
+        int i = 0;
 
-        for (int i = 0; i < arr.length; i++) {
+        while (i < arr.length) {
             if (arr[i] != i + 1) {
-                temp = arr[i];
+                int temp = arr[i];
                 arr[i] = arr[temp - 1];
                 arr[temp - 1] = temp;
                 count++;
-                i--;
+            }
+            else {
+                i++;
             }
         }
         return count;
