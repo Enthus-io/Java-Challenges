@@ -10,37 +10,24 @@ public class Solution {
 
     // Complete the minimumSwaps function below.
     static int minimumSwaps(int[] arr) {
-        int swaps = 0;
+        int count = 0;
+        int temp;
 
-        for (int i = 0; i < arr.length - 1; i++) {
-            int out = 0;
-
-            for (int j = i; j + 1 < arr.length; j++) {
-                if(arr[j + 1] == j + 1) {
-                    int t = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = t;
-                    swaps++;
-                }
-                }
-
-            int a = arr[arr.length - 1];
-            int b =  arr.length - 1;
-            if(arr[arr.length - 1] != arr.length) {
-                int t = arr[arr[arr.length - 1] - 1];
-                arr[arr[arr.length - 1] - 1] = arr[arr.length - 1];
-                arr[arr.length - 1] = t;
-                swaps++;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != i + 1) {
+                temp = arr[i];
+                arr[i] = arr[temp - 1];
+                arr[temp - 1] = temp;
+                count++;
+                i--;
             }
         }
-
-
-        return swaps;
+        return count;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
