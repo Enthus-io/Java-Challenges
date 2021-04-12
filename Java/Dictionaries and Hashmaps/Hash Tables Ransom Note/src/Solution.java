@@ -11,13 +11,12 @@ public class Solution {
     // Complete the checkMagazine function below.
     static void checkMagazine(String[] magazine, String[] note) {
 
-
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws FileNotFoundException {
-        File mFile = new File(System.getProperty("user.dir") + "\\src\\" + "case_01.txt");
+        File mFile = new File(System.getProperty("user.dir") + "\\src\\" + "case_02.txt");
         Scanner scanner = new Scanner(mFile);
         String[] mn = scanner.nextLine().split(" ");
 
