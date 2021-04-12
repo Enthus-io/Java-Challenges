@@ -10,7 +10,33 @@ public class Solution {
 
     // Complete the checkMagazine function below.
     static void checkMagazine(String[] magazine, String[] note) {
+        HashMap<String, Integer> magazineTable = new HashMap<String, Integer>(magazine.length * 2);
+        boolean allFound = true;
 
+        for (String m: magazine) {
+            if(magazineTable.get(m) == null)
+                magazineTable.put(m, 1);
+            else
+                magazineTable.put(m, magazineTable.get(m) + 1);
+        }
+
+        for (String n: note) {
+            if(magazineTable.containsKey(n)) {
+                magazineTable.put(n, magazineTable.get(n) - 1);
+
+                if(magazineTable.get(n) == 0)
+                    magazineTable.remove(n);
+            }
+            else {
+                allFound = false;
+                break;
+            }
+        }
+
+        if(allFound)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
     }
 
     private static final Scanner scanner = new Scanner(System.in);
