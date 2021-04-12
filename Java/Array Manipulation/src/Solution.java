@@ -1,5 +1,6 @@
 import java.io.*;
 import java.math.*;
+import java.net.URL;
 import java.security.*;
 import java.text.*;
 import java.util.*;
@@ -10,17 +11,18 @@ public class Solution {
 
     // Complete the arrayManipulation function below.
     static long arrayManipulation(int n, int[][] queries) {
+        long max = 0;
 
-
-        return 1;
+        return max;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        File mFile = new File(System.getProperty("user.dir") + "\\src\\" + "case_01.txt");
+        Scanner scanner = new Scanner(mFile);
 
         String[] nm = scanner.nextLine().split(" ");
-
         int n = Integer.parseInt(nm[0]);
 
         int m = Integer.parseInt(nm[1]);
@@ -38,6 +40,7 @@ public class Solution {
         }
 
         long result = arrayManipulation(n, queries);
+        System.out.println(result);
 
         scanner.close();
     }
