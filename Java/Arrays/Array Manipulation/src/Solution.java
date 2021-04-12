@@ -12,7 +12,20 @@ public class Solution {
     // Complete the arrayManipulation function below.
     static long arrayManipulation(int n, int[][] queries) {
         long max = 0;
-		
+        long sum = 0;
+        int lBound = 0, rBound = 1, value = 2;
+        long[] array = new long[n + 1];
+
+        for (int[] q: queries) {
+            array[q[lBound] - 1] += q[value];
+            array[q[rBound]] -= q[value];
+        }
+
+        for (int i = 0; i < n; i++) {
+            sum += array[i];
+            max = Math.max(max, sum);
+        }
+
         return max;
     }
 
