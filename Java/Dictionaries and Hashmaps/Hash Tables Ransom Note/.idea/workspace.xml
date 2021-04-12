@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588bed83-75cf-46b5-8b90-267722700910" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/case_00.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_02.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/case_13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hash Tables Ransom Note/case_01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hash Tables Ransom Note/case_01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/case_01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/case_01.txt" afterDir="false" />
-    </list>
+    <list default="true" id="588bed83-75cf-46b5-8b90-267722700910" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
