@@ -10,9 +10,21 @@ public class Solution {
 
     // Complete the twoStrings function below.
     static String twoStrings(String s1, String s2) {
+        String found = "NO";
+        Map<Character, Character> list = new HashMap<Character, Character>();
 
+        for (Character c : s1.toCharArray()) {
+            list.put(c, c);
+        }
 
-        return "Hello";
+        for (Character c : s2.toCharArray()) {
+            if (list.containsKey(c)) {
+                found = "YES";
+                break;
+            }
+        }
+
+        return found;
     }
 
 
@@ -29,6 +41,7 @@ public class Solution {
             String s2 = scanner.nextLine();
 
             String result = twoStrings(s1, s2);
+            System.out.println(result);
         }
 
         scanner.close();
