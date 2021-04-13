@@ -11,7 +11,7 @@ public class Solution {
     // Complete the twoStrings function below.
     static String twoStrings(String s1, String s2) {
         String found = "NO";
-        Map<Character, Character> list = new HashMap<Character, Character>();
+        Map<Character, Character> list = new HashMap<Character, Character>(s1.length());
 
         for (Character c : s1.toCharArray()) {
             list.put(c, c);
