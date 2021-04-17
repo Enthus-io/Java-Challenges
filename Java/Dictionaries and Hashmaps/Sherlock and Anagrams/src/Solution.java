@@ -10,12 +10,14 @@ public class Solution {
 
     // Complete the sherlockAndAnagrams function below.
     static int sherlockAndAnagrams(String s) {
+        int count = 0;
 
-        return 1;
+
+        return count;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        File mFile = new File(System.getProperty("user.dir") + "\\src\\" + "case_00.txt");
+        File mFile = new File(System.getProperty("user.dir") + "\\src\\" + "case_01.txt");
         Scanner scanner = new Scanner(mFile);
 
         int q = scanner.nextInt();
