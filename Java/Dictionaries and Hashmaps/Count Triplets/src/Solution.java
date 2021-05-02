@@ -21,7 +21,7 @@ public class Solution {
 
         // Identify multiple entries
         for (long i : arr) {
-            if(hashList.get(i) == null)
+            if (hashList.get(i) == null)
                 hashList.put(i, 1);
             else
                 hashList.put(i, hashList.get(i) + 1);
@@ -29,11 +29,13 @@ public class Solution {
 
         // Count geometric progressions for every ith element in arr
         for (long i : arr) {
+            if(i == 5)
+                System.out.println(5);
             long j = i * r;
-            long k = i * r * r;
+            long k = j * r;
 
-            if(hashList.containsKey(j) && hashList.containsKey(k)) {
-                count += Math.pow(2, hashList.get(j) - 1) * Math.pow(2, hashList.get(k) - 1);
+            if (hashList.containsKey(j) && hashList.containsKey(k)) {
+                count += hashList.get(j) * hashList.get(k);
             }
         }
 
@@ -41,7 +43,7 @@ public class Solution {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\src\\" + "case_02.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\src\\" + "case_06.txt"));
 
         String[] nr = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
