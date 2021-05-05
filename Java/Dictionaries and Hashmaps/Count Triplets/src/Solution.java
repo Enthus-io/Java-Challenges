@@ -17,33 +17,39 @@ public class Solution {
     static long countTriplets(List<Long> arr, long r) {
         // Time complexity is O(n)
         long count = 0;
-        Map<Long, Integer> hashList = new HashMap<Long, Integer>();
+        Map<Long, Integer> hashList = new HashMap<>();
 
-        // Identify multiple entries
-        for (long i : arr) {
-            if (hashList.get(i) == null)
-                hashList.put(i, 1);
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            long ith = arr.get(i);
+            long jth = ith * r;
+            long kth = jth * r;
+
+
+            if (hashList.get(ith) == null)
+
+                hashList.put(ith, 1);
             else
-                hashList.put(i, hashList.get(i) + 1);
-        }
+                hashList.put(ith, hashList.get(ith) + 1);
 
-        // Count geometric progressions for every ith element in arr
-        for (long i : arr) {
-            if(i == 5)
-                System.out.println(5);
-            long j = i * r;
-            long k = j * r;
-
-            if (hashList.containsKey(j) && hashList.containsKey(k)) {
-                count += hashList.get(j) * hashList.get(k);
+            if(hashList.containsKey(ith / r)){
+                hashList.remove(ith / r);
             }
+            if(hashList.containsKey(ith / r / r)){
+                hashList.remove(ith / r / r);
+            }
+
+            if(hashList.containsKey(ith * r) && hashList.containsKey(ith * r * r)){
+                count += hashList.get(ith * r) * hashList.get(ith * r * r);
+            }
+
+
         }
 
         return count;
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\src\\" + "case_06.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\src\\" + "case_14.txt"));
 
         String[] nr = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
