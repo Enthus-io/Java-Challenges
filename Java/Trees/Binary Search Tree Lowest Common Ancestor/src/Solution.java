@@ -23,6 +23,14 @@ class Solution {
     */
     public static Node lca(Node root, int v1, int v2) {
         // Write your code here.
+        if(root.data > v1 && root.data > v2){
+            return lca(root.left,v1,v2);
+        }
+
+        if(root.data < v1 && root.data < v2){
+            return lca(root.right,v1,v2);
+        }
+
         return root;
     }
 
@@ -43,7 +51,7 @@ class Solution {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scan = new Scanner(new File(System.getProperty("user.dir") + "\\src\\" + "case_02.txt"));
+        Scanner scan = new Scanner(new File(System.getProperty("user.dir") + "\\src\\" + "case_00.txt"));
         int t = scan.nextInt();
         Node root = null;
         while (t-- > 0) {
