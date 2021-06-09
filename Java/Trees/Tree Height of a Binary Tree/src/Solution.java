@@ -22,12 +22,16 @@ class Solution {
         Node right;
     */
     public static int height(Node root){
+        int currentHeight = 0;
+
         if (root == null){
-            return -1;
+            currentHeight = -1;
         }
         else{
-            return 1 + Math.max( height(root.left), height(root.right) );
+            currentHeight = 1 + Math.max( height(root.left), height(root.right) );
         }
+
+        return currentHeight;
     }
 
     public static Node insert(Node root, int data) {
