@@ -21,47 +21,13 @@ class Solution {
         Node left;
         Node right;
     */
-    public static int height(Node root) {
-        // Write your code here.
-        int height = 0;
-        int l = 0;
-        int r = 0;
-
-        if(root.left != null) {
-            l = height(root.left, 1);
+    public static int height(Node root){
+        if (root == null){
+            return -1;
         }
-
-        if(root.right != null) {
-            r = height(root.right, 1);
+        else{
+            return 1 + Math.max( height(root.left), height(root.right) );
         }
-
-        if(l > r)
-            height = l;
-        else
-            height = r;
-
-        return height;
-    }
-
-    public static int height(Node root, int currHeight) {
-        int height = 0;
-        int l = currHeight;
-        int r = currHeight;
-
-        if(root.left != null) {
-            l = height(root.left, currHeight + 1);
-        }
-
-        if(root.right != null) {
-            r = height(root.right, currHeight + 1);
-        }
-
-        if(l > r)
-            height = l;
-        else
-            height = r;
-
-        return height;
     }
 
     public static Node insert(Node root, int data) {
