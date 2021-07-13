@@ -12,12 +12,11 @@ public class Solution {
     // Complete the freqQuery function below.
     static List<Integer> freqQuery(List<List<Integer>> queries) {
 
-
+        return (List) queries;
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\src\\" + "case_00.txt"));
 
         int q = Integer.parseInt(bufferedReader.readLine().trim());
 
@@ -37,14 +36,7 @@ public class Solution {
 
         List<Integer> ans = freqQuery(queries);
 
-        bufferedWriter.write(
-                ans.stream()
-                        .map(Object::toString)
-                        .collect(joining("\n"))
-                        + "\n"
-        );
 
         bufferedReader.close();
-        bufferedWriter.close();
     }
 }
