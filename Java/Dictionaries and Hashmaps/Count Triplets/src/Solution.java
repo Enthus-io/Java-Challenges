@@ -14,40 +14,17 @@ public class Solution {
         Map<Long, Long> ij = new HashMap<>();
         Map<Long, Long> jk = new HashMap<>();
 
-
         for (int index = arr.size() - 1; index >= 0; index--) {
-            long i = arr.get(index);
-            long j = i * r;
-            long k = j * r;
+            long current = arr.get(index);
+            long next = current * r;
 
+            if (jk.containsKey(next)) // Found j -> k
+                count = count + jk.get(next);
 
-            if(ij.get(i) == null){
-                ij.put(i, 1L);
+            if (ij.containsKey(next)) // Found i -> j
+                jk.put(current, (jk.containsKey(current) ? jk.get(current) : 0) + ij.get(next));
 
-            }
-            else{
-                ij.put(i, ij.get(i) + 1);
-            }
-
-            if(ij.get(j) != null){
-                System.out.println("found i->j");
-
-                if(jk.get(j) == null){
-                    jk.put(j, 1L);
-
-                }
-                else{
-                    jk.put(j, jk.get(j) + 1);
-                }
-
-
-
-                if(jk.get(k) != null){
-                    System.out.println("found i->j->k");
-                    count = count + jk.get(k) * ij.get(k);
-                }
-
-            }
+            ij.put(current, (ij.containsKey(current) ? ij.get(current) : 0) + 1L);
         }
 
         return count;
