@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -19,12 +21,20 @@ class Result {
 
     public static int maximumToys(List<Integer> prices, int k) {
         // Write your code here
+        Integer items = 0;
+        Collections.sort(prices);
 
-        System.out.println(prices);
+        for (Integer price : prices) {
+            k -= price;
 
-        return 0;
+            if(k > 0)
+                items++;
+            else
+                break;
+        }
+
+        return items;
     }
-
 }
 
 public class Solution {
