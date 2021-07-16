@@ -20,6 +20,8 @@ class Result {
     public static int maximumToys(List<Integer> prices, int k) {
         // Write your code here
 
+        System.out.println(prices);
+
         return 0;
     }
 
