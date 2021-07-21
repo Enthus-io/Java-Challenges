@@ -1,0 +1,5 @@
+3
+smith 20
+jones 15
+jones 20
+{"mode":"full","isActive":false}
